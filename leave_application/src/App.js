@@ -11,8 +11,6 @@ import {
   TextField,
 } from "@mui/material";
 import { DatePicker } from "@mui/lab";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import MetaData from "./utils/metadata";
 
 const App = () => {
@@ -137,7 +135,6 @@ const App = () => {
                   setendDate(event.target.value);
                 }}
               /> */}
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
                   label="Select Date"
                   value={endDate}
@@ -145,7 +142,6 @@ const App = () => {
                     setendDate(event.target.value);
                   }}
                 />
-              </LocalizationProvider>
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
               <TextField
