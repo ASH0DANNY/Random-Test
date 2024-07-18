@@ -168,7 +168,11 @@ const App = () => {
                 }}
               />
             </Grid>
-            {alert ? <ErrorAlert message={"Enter all fields.."}/> : null}
+
+            <Typography>
+              {alert ? <ErrorAlert message={"Enter all fields.."} /> : null}
+            </Typography>
+
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Button variant="contained" onClick={submitForm}>
                 SUBMIT
