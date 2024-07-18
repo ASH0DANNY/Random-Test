@@ -19,6 +19,11 @@ const App = () => {
   const [endDate, setendDate] = useState("");
   const [aReason, setaReason] = useState("");
 
+  const singleStyle = {
+    marginTop: 5,
+    marginLeft: 2,
+  };
+
   const submitForm = async () => {
     // Get form data
 
@@ -72,8 +77,8 @@ const App = () => {
       <MetaData title="Leave Application Form" />
       <Container>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-          <Grid container>
-            <Grid item md={4} xs={12}>
+          <Grid container spacing={2}>
+            <Grid item md={4} xs={12} sx={singleStyle}>
               <TextField
                 label="Enter Name"
                 variant="standard"
@@ -85,7 +90,7 @@ const App = () => {
               />
             </Grid>
 
-            <Grid item md={4} xs={12}>
+            <Grid item md={4} xs={12} sx={singleStyle}>
               <InputLabel id="demo-select-small-label">TransType</InputLabel>
               <Select
                 labelId="demo-select-small-label"
@@ -106,8 +111,8 @@ const App = () => {
               </Select>
             </Grid>
 
-            <Grid item md={4} xs={12}>
-              <InputLabel id="start_date_label">Start Date</InputLabel>
+            <Grid item md={4} xs={12} sx={singleStyle}>
+              {/* <InputLabel id="start_date_label">Start Date</InputLabel> */}
               <TextField
                 labelId="start_date_label"
                 variant="standard"
@@ -118,8 +123,8 @@ const App = () => {
                 }}
               />
             </Grid>
-            <Grid item md={4} xs={12}>
-              <InputLabel id="end_date_label">End Date</InputLabel>
+            <Grid item md={4} xs={12} sx={singleStyle}>
+              {/* <InputLabel id="end_date_label">End Date</InputLabel> */}
               <TextField
                 labelId="end_date_label"
                 variant="standard"
@@ -130,7 +135,7 @@ const App = () => {
                 }}
               />
             </Grid>
-            <Grid item md={4} xs={12}>
+            <Grid item md={4} xs={12} sx={singleStyle}>
               <TextField
                 label="Enter Reason"
                 variant="standard"
@@ -141,7 +146,7 @@ const App = () => {
                 }}
               />
             </Grid>
-            <Grid item md={4} xs={12}>
+            <Grid item md={4} xs={12} sx={singleStyle}>
               <Button variant="contained" onClick={submitForm}>
                 SUBMIT
               </Button>
