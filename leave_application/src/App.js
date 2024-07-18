@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MetaData from "./utils/metadata";
+import { ErrorAlert } from "./utils/alerts";
 
 const App = () => {
   const [alert, setalert] = useState(false);
@@ -167,6 +168,7 @@ const App = () => {
                 }}
               />
             </Grid>
+            {alert ? <ErrorAlert message={"Enter all fields.."}/> : null}
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Button variant="contained" onClick={submitForm}>
                 SUBMIT
