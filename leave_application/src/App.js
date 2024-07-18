@@ -3,12 +3,14 @@ import jsPDF from "jspdf";
 import {
   Button,
   Container,
+  FormControl,
   Grid,
   InputLabel,
   MenuItem,
   Select,
   TextField,
 } from "@mui/material";
+import MetaData from "./utils/metadata";
 
 const App = () => {
   const [aName, setAName] = useState("");
@@ -67,79 +69,85 @@ const App = () => {
 
   return (
     <>
-      {/* <h1>Leave Application Form</h1> */}
+      <MetaData title="Leave Application Form" />
       <Container>
-        <Grid container>
-          <Grid item md={4} xs={12}>
-            <TextField
-              label="Enter Name"
-              variant="standard"
-              type="text"
-              value={aName}
-              onChange={(event) => {
-                setAName(event.target.value);
-              }}
-            />
-          </Grid>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+          <Grid container>
+            <Grid item md={4} xs={12}>
+              <TextField
+                label="Enter Name"
+                variant="standard"
+                type="text"
+                value={aName}
+                onChange={(event) => {
+                  setAName(event.target.value);
+                }}
+              />
+            </Grid>
 
-          <Grid item md={4} xs={12}>
-            <InputLabel id="demo-select-small-label">TransType</InputLabel>
-            <Select
-              labelId="demo-select-small-label"
-              id="demo-select-small"
-              label="TransType"
-              value={leaveType}
-              sx={{ width: "100%", height: "80%" }}
-              onChange={(event) => {
-                setleaveType(event.target.value);
-              }}
-            >
-              <MenuItem value="">
-                <em>-None-</em>
-              </MenuItem>
-              <MenuItem value={"Sick Leave"}>Sick Leave</MenuItem>
-              <MenuItem value={"Vacation Leave"}>Vacation Leave</MenuItem>
-              <MenuItem value={"Personal Leave"}>Personal Leave</MenuItem>
-            </Select>
-          </Grid>
+            <Grid item md={4} xs={12}>
+              <InputLabel id="demo-select-small-label">TransType</InputLabel>
+              <Select
+                labelId="demo-select-small-label"
+                id="demo-select-small"
+                label="TransType"
+                value={leaveType}
+                sx={{ width: "100%", height: "80%" }}
+                onChange={(event) => {
+                  setleaveType(event.target.value);
+                }}
+              >
+                <MenuItem value="">
+                  <em>-None-</em>
+                </MenuItem>
+                <MenuItem value={"Sick Leave"}>Sick Leave</MenuItem>
+                <MenuItem value={"Vacation Leave"}>Vacation Leave</MenuItem>
+                <MenuItem value={"Personal Leave"}>Personal Leave</MenuItem>
+              </Select>
+            </Grid>
 
-          <Grid item md={4} xs={12}>
-            <TextField
-              label="Enter Start Date"
-              variant="standard"
-              type="date"
-              value={startDate}
-              onChange={(event) => {
-                setstartDate(event.target.value);
-              }}
-            />
+            <Grid item md={4} xs={12}>
+              <InputLabel id="start_date_label">Start Date</InputLabel>
+              <TextField
+                labelId="start_date_label"
+                variant="standard"
+                type="date"
+                value={startDate}
+                onChange={(event) => {
+                  setstartDate(event.target.value);
+                }}
+              />
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <InputLabel id="end_date_label">End Date</InputLabel>
+              <TextField
+                labelId="end_date_label"
+                variant="standard"
+                type="date"
+                value={endDate}
+                onChange={(event) => {
+                  setendDate(event.target.value);
+                }}
+              />
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <TextField
+                label="Enter Reason"
+                variant="standard"
+                type="text"
+                value={aReason}
+                onChange={(event) => {
+                  setaReason(event.target.value);
+                }}
+              />
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <Button variant="contained" onClick={submitForm}>
+                SUBMIT
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item md={4} xs={12}>
-            <TextField
-              label="Enter End Date"
-              variant="standard"
-              type="date"
-              value={endDate}
-              onChange={(event) => {
-                setendDate(event.target.value);
-              }}
-            />
-          </Grid>
-          <Grid item md={4} xs={12}>
-            <TextField
-              label="Enter Reason"
-              variant="standard"
-              type="text"
-              value={aReason}
-              onChange={(event) => {
-                setaReason(event.target.value);
-              }}
-            />
-          </Grid>
-          <Grid item md={4} xs={12}>
-            <Button variant="contained" onClick={submitForm}></Button>
-          </Grid>
-        </Grid>
+        </FormControl>
       </Container>
     </>
   );
