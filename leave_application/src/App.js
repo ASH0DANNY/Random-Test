@@ -13,6 +13,7 @@ import {
 import MetaData from "./utils/metadata";
 
 const App = () => {
+  const [alert, setalert] = useState(false);
   const [aName, setAName] = useState("");
   const [leaveType, setleaveType] = useState("");
   const [startDate, setstartDate] = useState("");
@@ -26,20 +27,29 @@ const App = () => {
 
   const submitForm = async () => {
     // Get form data
+    if (
+      aName === "" ||
+      leaveType === "" ||
+      startDate === "" ||
+      endDate === "" ||
+      aReason === ""
+    ) {
+      setalert(true);
+    } else {
+      var formData = await {
+        name: aName,
+        leaveType: leaveType,
+        startDate: startDate,
+        endDate: endDate,
+        reason: aReason,
+      };
 
-    var formData = await {
-      name: aName,
-      leaveType: leaveType,
-      startDate: startDate,
-      endDate: endDate,
-      reason: aReason,
-    };
+      // Convert form data to JSON
+      var jsonData = JSON.stringify(formData);
 
-    // Convert form data to JSON
-    var jsonData = JSON.stringify(formData);
-
-    // Print the leave application using jsPDF
-    printLeaveApplication(jsonData);
+      // Print the leave application using jsPDF
+      printLeaveApplication(jsonData);
+    }
   };
 
   const printLeaveApplication = (data) => {
@@ -76,7 +86,10 @@ const App = () => {
     <>
       <MetaData title="Leave Application Form" />
       <Container>
-        <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "rgb(255, 0, 0, 0.1)" }} size="small">
+        <FormControl
+          sx={{ m: 1, minWidth: 120, backgroundColor: "rgb(255, 0, 0, 0.1)" }}
+          size="small"
+        >
           <Grid container spacing={2}>
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Typography component="p">
@@ -132,15 +145,15 @@ const App = () => {
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Typography component="p">
                 <Typography>End Date</Typography>
-              <TextField
-                labelId="end_date_label"
-                variant="standard"
-                type="date"
-                value={endDate}
-                onChange={(event) => {
-                  setendDate(event.target.value);
-                }}
-              />
+                <TextField
+                  labelId="end_date_label"
+                  variant="standard"
+                  type="date"
+                  value={endDate}
+                  onChange={(event) => {
+                    setendDate(event.target.value);
+                  }}
+                />
               </Typography>
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
