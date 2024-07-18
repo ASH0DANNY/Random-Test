@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      #randomNumbers {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Number Generator</h1>
+    <button onclick="generateRandomNumbers()">Generate Random Numbers</button>
+    <div id="randomNumbers"></div>
+
+    <script>
+      function generateRandomNumbers() {
+        var count = 10; // Number of random numbers to generate
+        var randomNumbers = [];
+
+        for (var i = 0; i < count; i++) {
+          var randomNumber = Math.random() * 9 + 1; // Generate random number between 1 and 10
+          randomNumbers.push(randomNumber.toFixed(2)); // Round to 2 decimal places
+        }
+
+        // Display random numbers on the webpage
+        var randomNumbersDiv = document.getElementById("randomNumbers");
+        randomNumbersDiv.innerHTML =
+          "<p>Generated random numbers: " + randomNumbers.join(", ") + "</p>";
+      }
+    </script>
+  </body>
+</html>
