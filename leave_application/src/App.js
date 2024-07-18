@@ -35,7 +35,10 @@ const App = () => {
       endDate === "" ||
       aReason === ""
     ) {
-      setalert(true);
+      setTimeout(() => {
+        setalert(true);
+      }, 2000);
+      setalert(false);
     } else {
       var formData = await {
         name: aName,
