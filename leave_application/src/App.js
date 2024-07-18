@@ -10,6 +10,9 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import { DatePicker } from "@mui/lab";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import MetaData from "./utils/metadata";
 
 const App = () => {
@@ -124,8 +127,8 @@ const App = () => {
               />
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
-              <InputLabel id="end_date_label">End Date</InputLabel>
-              <TextField
+              {/* <InputLabel id="end_date_label">End Date</InputLabel> */}
+              {/* <TextField
                 labelId="end_date_label"
                 variant="standard"
                 type="date"
@@ -133,7 +136,16 @@ const App = () => {
                 onChange={(event) => {
                   setendDate(event.target.value);
                 }}
-              />
+              /> */}
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  label="Select Date"
+                  value={endDate}
+                  onChange={(event) => {
+                    setendDate(event.target.value);
+                  }}
+                />
+              </LocalizationProvider>
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
               <TextField
