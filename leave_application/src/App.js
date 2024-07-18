@@ -76,7 +76,7 @@ const App = () => {
     <>
       <MetaData title="Leave Application Form" />
       <Container>
-        <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "rgb(255, 0, 0, 0.3)" }} size="small">
+        <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "rgb(255, 0, 0, 0.8)" }} size="small">
           <Grid container spacing={2}>
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Typography component="p">
