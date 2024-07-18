@@ -5,12 +5,11 @@ import {
   Container,
   FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
-import { DatePicker } from "@mui/lab";
 import MetaData from "./utils/metadata";
 
 const App = () => {
@@ -80,53 +79,60 @@ const App = () => {
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <Grid container spacing={2}>
             <Grid item md={4} xs={12} sx={singleStyle}>
-              <TextField
-                label="Enter Name"
-                variant="standard"
-                type="text"
-                value={aName}
-                onChange={(event) => {
-                  setAName(event.target.value);
-                }}
-              />
+              <Typography component="p">
+                <TextField
+                  label="Enter Name"
+                  variant="standard"
+                  type="text"
+                  value={aName}
+                  onChange={(event) => {
+                    setAName(event.target.value);
+                  }}
+                />
+              </Typography>
             </Grid>
 
             <Grid item md={4} xs={12} sx={singleStyle}>
-              <InputLabel id="demo-select-small-label">TransType</InputLabel>
-              <Select
-                labelId="demo-select-small-label"
-                id="demo-select-small"
-                label="TransType"
-                value={leaveType}
-                sx={{ width: "100%", height: "80%" }}
-                onChange={(event) => {
-                  setleaveType(event.target.value);
-                }}
-              >
-                <MenuItem value="">
-                  <em>-None-</em>
-                </MenuItem>
-                <MenuItem value={"Sick Leave"}>Sick Leave</MenuItem>
-                <MenuItem value={"Vacation Leave"}>Vacation Leave</MenuItem>
-                <MenuItem value={"Personal Leave"}>Personal Leave</MenuItem>
-              </Select>
+              <Typography component="p">
+                <Typography>Leave Type</Typography>
+                <Select
+                  labelId="demo-select-small-label"
+                  id="demo-select-small"
+                  label="TransType"
+                  value={leaveType}
+                  sx={{ width: "100%", height: "80%" }}
+                  onChange={(event) => {
+                    setleaveType(event.target.value);
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>-None-</em>
+                  </MenuItem>
+                  <MenuItem value={"Sick Leave"}>Sick Leave</MenuItem>
+                  <MenuItem value={"Vacation Leave"}>Vacation Leave</MenuItem>
+                  <MenuItem value={"Personal Leave"}>Personal Leave</MenuItem>
+                </Select>
+              </Typography>
             </Grid>
 
             <Grid item md={4} xs={12} sx={singleStyle}>
-              <InputLabel id="start_date_label">Start Date</InputLabel>
-              <TextField
-                labelId="start_date_label"
-                variant="standard"
-                type="date"
-                value={startDate}
-                onChange={(event) => {
-                  setstartDate(event.target.value);
-                }}
-              />
+              <Typography component="p">
+                <Typography>Start Date</Typography>
+                <TextField
+                  labelId="start_date_label"
+                  variant="standard"
+                  type="date"
+                  value={startDate}
+                  onChange={(event) => {
+                    setstartDate(event.target.value);
+                  }}
+                />
+              </Typography>
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
-              {/* <InputLabel id="end_date_label">End Date</InputLabel> */}
-              {/* <TextField
+              <Typography component="p">
+                <Typography>End Date</Typography>
+              <TextField
                 labelId="end_date_label"
                 variant="standard"
                 type="date"
@@ -134,14 +140,8 @@ const App = () => {
                 onChange={(event) => {
                   setendDate(event.target.value);
                 }}
-              /> */}
-                <DatePicker
-                  label="Select Date"
-                  value={endDate}
-                  onChange={(event) => {
-                    setendDate(event.target.value);
-                  }}
-                />
+              />
+              </Typography>
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
               <TextField
