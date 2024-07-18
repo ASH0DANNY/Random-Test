@@ -112,7 +112,7 @@ const App = () => {
             </Grid>
 
             <Grid item md={4} xs={12} sx={singleStyle}>
-              {/* <InputLabel id="start_date_label">Start Date</InputLabel> */}
+              <InputLabel id="start_date_label">Start Date</InputLabel>
               <TextField
                 labelId="start_date_label"
                 variant="standard"
@@ -124,7 +124,7 @@ const App = () => {
               />
             </Grid>
             <Grid item md={4} xs={12} sx={singleStyle}>
-              {/* <InputLabel id="end_date_label">End Date</InputLabel> */}
+              <InputLabel id="end_date_label">End Date</InputLabel>
               <TextField
                 labelId="end_date_label"
                 variant="standard"
