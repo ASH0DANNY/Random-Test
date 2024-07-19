@@ -40,9 +40,9 @@ console.log("data=="+data);
   var contentLines = doc.splitTextToSize(content, 180);
 
   // Add content to PDF
-  doc.text(contentLines, 10, 10);
+  await doc.text(contentLines, 10, 10);
 
   // Save PDF
   console.log("Saving PDF...");
-  doc.save("leave_application.pdf");
+  await doc.save("leave_application.pdf");
 };
