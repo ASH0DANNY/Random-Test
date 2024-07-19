@@ -54,7 +54,7 @@ const App = () => {
       var jsonData = await JSON.stringify(formData);
 
       // Print the leave application using jsPDF
-      await PrintLeaveApplication(jsonData);
+      await PrintLeaveApplication(formData);
     }
   };
 

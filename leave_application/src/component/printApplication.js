@@ -1,5 +1,5 @@
 import { jsPDF } from "jspdf";
-export const PrintLeaveApplication = async (data) => {
+export const PrintLeaveApplication = async (formDatadata) => {
   const doc = new jsPDF({
     orientation: "p",
     unit: "mm",
@@ -7,7 +7,7 @@ export const PrintLeaveApplication = async (data) => {
   });
 console.log("data=="+data);
 //   var leaveData = JSON.parse(data);
-
+const data = await formDatadata;
 
   // Format the leave application
   var content = await `
