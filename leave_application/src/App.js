@@ -51,7 +51,7 @@ const App = () => {
       };
 
       // Convert form data to JSON
-      var jsonData = await JSON.stringify(formData);
+      // var jsonData = await JSON.stringify(formData);
 
       // Print the leave application using jsPDF
       await PrintLeaveApplication(formData);

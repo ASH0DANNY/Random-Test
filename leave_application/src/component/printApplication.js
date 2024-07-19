@@ -5,9 +5,9 @@ export const PrintLeaveApplication = async (formDatadata) => {
     unit: "mm",
     format: "a4",
   });
-console.log("data=="+data);
-//   var leaveData = JSON.parse(data);
-const data = await formDatadata;
+  //   var leaveData = JSON.parse(data);
+  const data = await formDatadata;
+  console.log("data=="+data);
 
   // Format the leave application
   var content = await `
