@@ -16,6 +16,7 @@ import { PrintLeaveApplication } from "./component/printApplication";
 const App = () => {
   const [alert, setalert] = useState(false);
   const [aName, setAName] = useState("");
+  const [recName,setrecName] = useState("");
   const [leaveType, setleaveType] = useState("");
   const [startDate, setstartDate] = useState("");
   const [endDate, setendDate] = useState("");
@@ -41,6 +42,7 @@ const App = () => {
       }, 2000);
     } else {
       var formData = await {
+        recpName:recName,
         name: aName,
         leaveType: leaveType,
         startDate: startDate,
@@ -65,10 +67,24 @@ const App = () => {
           size="small"
         >
           <Grid container spacing={2}>
+          <Grid item md={4} xs={12} sx={singleStyle}>
+              <Typography component="p">
+                <TextField
+                  label="Enter Reciepent Name"
+                  variant="standard"
+                  type="text"
+                  value={recName}
+                  onChange={(event) => {
+                    setrecName(event.target.value);
+                  }}
+                />
+              </Typography>
+            </Grid>
+
             <Grid item md={4} xs={12} sx={singleStyle}>
               <Typography component="p">
                 <TextField
-                  label="Enter Name"
+                  label="Enter Your Name"
                   variant="standard"
                   type="text"
                   value={aName}
