@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import MetaData from "./utils/metadata";
 import { ErrorAlert } from "./utils/alerts";
+import { PrintLeaveApplication } from "./component/printApplication";
 
 const App = () => {
   const [alert, setalert] = useState(false);
@@ -52,38 +53,8 @@ const App = () => {
       var jsonData = JSON.stringify(formData);
 
       // Print the leave application using jsPDF
-      printLeaveApplication(jsonData);
+      PrintLeaveApplication(jsonData);
     }
-  };
-
-  const printLeaveApplication = (data) => {
-    var doc = new jsPDF();
-    var leaveData = JSON.parse(data);
-
-    // Format the leave application
-    var content = `
-                Leave Application Form
-                -----------------------
-                Name: ${leaveData.name}
-                Leave Type: ${leaveData.leaveType}
-                Start Date: ${leaveData.startDate}
-                End Date: ${leaveData.endDate}
-                Reason:
-                ${leaveData.reason}
-            `;
-
-    // Set font and size for PDF
-    doc.setFont("helvetica");
-    doc.setFontSize(12);
-
-    // Split content into lines
-    var contentLines = doc.splitTextToSize(content, 180);
-
-    // Add content to PDF
-    doc.text(contentLines, 10, 10);
-
-    // Save PDF
-    doc.save("leave_application.pdf");
   };
 
   return (
