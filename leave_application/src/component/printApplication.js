@@ -1,12 +1,14 @@
 import { jsPDF } from "jspdf";
-export const PrintLeaveApplication = ({data}) => {
+export const PrintLeaveApplication = async (data) => {
   const doc = new jsPDF({
     orientation: "p",
     unit: "mm",
     format: "a4",
   });
 
-  var leaveData = JSON.parse(data);
+//   var leaveData = JSON.parse(data);
+  var leaveData = await data;
+
 
   // Format the leave application
   var content = `

@@ -49,10 +49,10 @@ const App = () => {
       };
 
       // Convert form data to JSON
-      var jsonData = JSON.stringify(formData);
+      var jsonData = await JSON.stringify(formData);
 
       // Print the leave application using jsPDF
-      PrintLeaveApplication(jsonData);
+      await PrintLeaveApplication(jsonData);
     }
   };
 
