@@ -16,7 +16,7 @@ import { PrintLeaveApplication } from "./component/printApplication";
 const App = () => {
   const [alert, setalert] = useState(false);
   const [aName, setAName] = useState("");
-  const [recName,setrecName] = useState("");
+  const [recName, setrecName] = useState("");
   const [leaveType, setleaveType] = useState("");
   const [startDate, setstartDate] = useState("");
   const [endDate, setendDate] = useState("");
@@ -30,6 +30,7 @@ const App = () => {
   const submitForm = async () => {
     // Get form data
     if (
+      recName === "" ||
       aName === "" ||
       leaveType === "" ||
       startDate === "" ||
@@ -42,7 +43,7 @@ const App = () => {
       }, 2000);
     } else {
       var formData = await {
-        recpName:recName,
+        recpName: recName,
         name: aName,
         leaveType: leaveType,
         startDate: startDate,
@@ -50,10 +51,6 @@ const App = () => {
         reason: aReason,
       };
 
-      // Convert form data to JSON
-      // var jsonData = await JSON.stringify(formData);
-
-      // Print the leave application using jsPDF
       await PrintLeaveApplication(formData);
     }
   };
@@ -67,7 +64,7 @@ const App = () => {
           size="small"
         >
           <Grid container spacing={2}>
-          <Grid item md={4} xs={12} sx={singleStyle}>
+            <Grid item md={4} xs={12} sx={singleStyle}>
               <Typography component="p">
                 <TextField
                   label="Enter Reciepent Name"

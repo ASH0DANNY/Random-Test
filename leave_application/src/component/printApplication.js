@@ -7,10 +7,9 @@ export const PrintLeaveApplication = async (formDatadata) => {
   });
   //   var leaveData = JSON.parse(data);
   const data = await formDatadata;
-  console.log("data=="+data);
 
   // Format the leave application
-  var content = await `
+  var content = `
                 Leave Application Form
                 -----------------------
 
@@ -40,9 +39,9 @@ export const PrintLeaveApplication = async (formDatadata) => {
   var contentLines = doc.splitTextToSize(content, 180);
 
   // Add content to PDF
-  await doc.text(contentLines, 10, 10);
+  doc.text(contentLines, 10, 10);
 
   // Save PDF
   console.log("Saving PDF...");
-  await doc.save("leave_application.pdf");
+  doc.save("leave_application.pdf");
 };
