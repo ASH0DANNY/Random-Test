@@ -1,5 +1,5 @@
 import { jsPDF } from "jspdf";
-export const PrintLeaveApplication = (data) => {
+export const PrintLeaveApplication = ({data}) => {
   const doc = new jsPDF({
     orientation: "p",
     unit: "mm",
