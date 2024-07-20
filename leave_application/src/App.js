@@ -67,6 +67,9 @@ const App = () => {
     <>
       <MetaData title="Leave Application Form" />
       <Container>
+        <Typography component="p" sx={{ fontSize: 20 }}>
+          Leave Application Form
+        </Typography>
         <FormControl
           sx={{
             m: 1,
