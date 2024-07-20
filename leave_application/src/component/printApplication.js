@@ -8,7 +8,6 @@ export const PrintLeaveApplication = async (formDatadata) => {
   //   var leaveData = JSON.parse(data);
   const data = await formDatadata;
 
-  // Format the leave application
   var content = `
                 Leave Application Form
                 -----------------------
@@ -31,17 +30,14 @@ export const PrintLeaveApplication = async (formDatadata) => {
                 Name: ${data.name}
             `;
 
-  // Set font and size for PDF
   doc.setFont("helvetica");
   doc.setFontSize(12);
 
   // Split content into lines
   var contentLines = doc.splitTextToSize(content, 180);
 
-  // Add content to PDF
   doc.text(contentLines, 10, 10);
 
-  // Save PDF
   console.log("Saving PDF...");
   doc.save("leave_application.pdf");
 };

@@ -28,7 +28,6 @@ const App = () => {
   };
 
   const submitForm = async () => {
-    // Get form data
     if (
       recName === "" ||
       aName === "" ||
@@ -69,7 +68,11 @@ const App = () => {
       <MetaData title="Leave Application Form" />
       <Container>
         <FormControl
-          sx={{ m: 1, minWidth: 120, backgroundColor: "rgb(135, 206, 235, 0.3)" }}
+          sx={{
+            m: 1,
+            minWidth: 120,
+            backgroundColor: "rgb(135, 206, 235, 0.3)",
+          }}
           size="small"
         >
           <Grid container spacing={2}>
