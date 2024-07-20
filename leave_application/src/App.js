@@ -75,6 +75,8 @@ const App = () => {
             m: 1,
             minWidth: 120,
             backgroundColor: "rgb(135, 206, 235, 0.3)",
+            padding:1,
+            borderRadius:3
           }}
           size="small"
         >
