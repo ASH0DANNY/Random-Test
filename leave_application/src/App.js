@@ -55,6 +55,15 @@ const App = () => {
     }
   };
 
+  const resetFields = async () => {
+    setAName("");
+    setrecName("");
+    setleaveType("");
+    setstartDate("");
+    setendDate("");
+    setaReason("");
+  };
+
   return (
     <>
       <MetaData title="Leave Application Form" />
@@ -160,8 +169,19 @@ const App = () => {
             </Typography>
 
             <Grid item md={4} xs={12} sx={singleStyle}>
-              <Button variant="contained" onClick={submitForm}>
-                SUBMIT & Save
+              <Button
+                variant="contained"
+                onClick={resetFields}
+                sx={{ marginLeft: 3 }}
+              >
+                RESET FIELDS
+              </Button>
+              <Button
+                variant="contained"
+                onClick={submitForm}
+                sx={{ marginLeft: 3 }}
+              >
+                SUBMIT & SAVE
               </Button>
             </Grid>
           </Grid>
