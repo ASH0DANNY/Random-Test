@@ -39,7 +39,7 @@ const App = () => {
       setalert(true);
       setTimeout(() => {
         setalert(false);
-      }, 2000);
+      }, 2500);
     } else {
       var formData = await {
         recpName: recName,
