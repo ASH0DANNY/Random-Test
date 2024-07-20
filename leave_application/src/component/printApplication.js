@@ -13,7 +13,7 @@ export const PrintLeaveApplication = async (formDatadata) => {
                 Leave Application Form
                 -----------------------
 
-                Subject: Application for ${data.leaveType} leave
+                Subject: Application for ${data.leaveType}
                 Dear ${data.recpName},
                 
                 I hope this message finds you well. I am writing to formally request a 
